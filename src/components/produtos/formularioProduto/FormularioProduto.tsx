@@ -41,6 +41,14 @@ function FormularioProduto() {
       },
     });
   }
+  
+  async function buscarProdutoPorPreco(preco: string) {
+    await buscar(`/produtos/${preco}`, setProduto, {
+      headers: {
+        Authorization: token,
+      },
+    });
+  }
 
   async function buscarCategoriaPorId(id: string) {
     await buscar(`/categoria/${id}`, setCategoria, {
